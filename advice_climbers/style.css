@@ -1,0 +1,65 @@
+section:hover {
+    background-color: black;
+    animation-duration: 3s;
+    animation-name: color-change;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    text-align: center;
+    font-family: "Lucida Console", monospace;
+    font-size: 14px;
+    padding-top: 30px;
+    color:white;
+}
+
+p{
+    text-align: center;
+    font-family: "Lucida Console", monospace;
+    padding-bottom: 30px;
+    color:rgb(0, 0, 0);
+    font-size: 14px;
+}
+
+mark{
+    background-color: lawngreen;
+}
+
+button{
+    width: fit-content;
+    margin: 0;
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bg {
+    background-image: "./images/backgroundmountain.png";
+    height: 100%; 
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+@keyframes color-change {  
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
