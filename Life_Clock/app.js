@@ -39,13 +39,13 @@ window.addEventListener('load', function () {
         .catch(error => {
             console.log("Error! :" + error);
             let weeksLived = data.data.age_weeks;
-            document.getElementById("weeksLived").innerHTML= "you're too alive";
+            document.getElementById("weeksLived").innerHTML="you're too alive";
 
             let weeksLeft = 4000 - weeksLived;
-            document.getElementById("weeksLeft").innerHTML= "you're too alive";
+            document.getElementById("weeksLeft").innerHTML="you're too alive";
 
             let lifeLived = (weeksLived/4000)*100;
-            document.getElementById("lifeLived").innerHTML= "you're too alive";
+            document.getElementById("lifeLived").innerHTML="you're too alive";
 
         }); 
     }
