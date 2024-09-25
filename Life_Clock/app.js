@@ -27,17 +27,26 @@ window.addEventListener('load', function () {
             // console.log(data);
             //5. Do something with the data
             let weeksLived = data.data.age_weeks;
-            document.getElementById("weeksLived").textContent=weeksLived;
+            document.getElementById("weeksLived").innerHTML=weeksLived;
 
             let weeksLeft = 4000 - weeksLived;
-            document.getElementById("weeksLeft").textContent=weeksLeft;
+            document.getElementById("weeksLeft").innerHTML=weeksLeft;
 
             let lifeLived = (weeksLived/4000)*100;
-            document.getElementById("lifeLived").textContent=lifeLived;
+            document.getElementById("lifeLived").innerHTML=lifeLived;
         })
 
         .catch(error => {
             console.log("Error! :" + error);
+            let weeksLived = data.data.age_weeks;
+            document.getElementById("weeksLived").innerHTML= "you're too alive";
+
+            let weeksLeft = 4000 - weeksLived;
+            document.getElementById("weeksLeft").innerHTML= "you're too alive";
+
+            let lifeLived = (weeksLived/4000)*100;
+            document.getElementById("lifeLived").innerHTML= "you're too alive";
+
         }); 
     }
 
