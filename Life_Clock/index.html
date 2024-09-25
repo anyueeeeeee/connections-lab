@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>You don't actually get given 4000 weeks, or even one week.</h1> 
+    <h1>You only get one moment after the other.</h1>
+    <section class="container" id="data_container">
+        <div class="input_wrap">
+            <input type="date" id="date_input" name="dob">
+            <button>Calculate</button>
+        </div>
+        <div class="output_wrap">
+            <div>
+                <span id="weeksLived">
+                    -
+                </span>
+                <p> Weeks Lived </p>
+            </div>
+        </div>
+
+        <div class="output_wrap">
+            <div>
+                <span id="weeksLeft">
+                    -
+                </span>
+                <p> Weeks Left </p>
+            </div>
+        </div>
+
+        <div class="output_wrap">
+            <div>
+                <span id="lifeLived">
+                    -
+                </span>
+                <p> % Lived </p>
+            </div>
+        </div>
+    </section>
+    <script src="app.js"></script>
+</body>
+</html>
