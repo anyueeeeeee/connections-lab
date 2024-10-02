@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+            <img src="icons/rt_logo.png" alt="Logo" class="header-logo">
+        </div>
+        <div class="header-right">
+            <a href="#" class="refreshBtn" onclick="window.location.reload();">START OVER →</a>
+        </div>
+    </header>
+
+    <div class="vertical-text-left">
+        <span class="left-text">LIFE&nbsp;&nbsp;CLOCK</span>
+    </div>
+
+    <div class="bottom-text-left">
+        <span class="left-text-bottom">inspired by scott thrift and vasily betin</span>
+    </div>
+
+    <div class="vertical-text-right">
+        <span class="right-text">based on four thousand weeks, by oliver burkeman</span>
+    </div>
+
+    <section class="center-container">
+        <div class="main-text">
+            <h1>your life in weeks</h1>
+            <div class="input_wrap">
+                <input type="date" id="date_input" name="dob">
+                <button>&nbsp;CALCULATE →&nbsp;</button>
+            </div>
+
+            <div class="weeks-container">
+                <div class="output_wrap">
+                    <div>
+                        <span id="weeksLived">
+                            -
+                        </span>
+                        <p> WEEKS LIVED </p>
+                    </div>
+                </div>
+        
+                <div class="output_wrap">
+                    <div>
+                        <span id="weeksLeft">
+                            -
+                        </span>
+                        <p> WEEKS LEFT </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="life-circle">
+            <div class="circle">
+                <p></p>
+                <span id="lifeLived">
+                   -
+                </span>
+                <h2>life lived</h2>
+            </div>
+
+            <svg class="circle-svg" width="300" height="300" viewBox="0 0 300 300">
+                <defs>
+                    <!-- Define a circular path with a larger radius to match the life lived circle, help from chatGPT -->
+                    <path id="text-circle" d="M 150, 150 m -125, 0 a 125,125 0 1,1 250,0 a 125,125 0 1,1 -250,0" />
+                </defs>
+                <text class="circular-text">
+                    <textPath href="#text-circle" startOffset="25%">
+                        · what are you going to do with your remaining sunrises? ·
+                    </textPath>
+                </text>
+            </svg>
+
+            <svg class="progress-circle" width="300" height="300" viewBox="0 0 300 300">
+                <circle class="progress-stroke" cx="150" cy="150" r="140" />
+            </svg>
+            
+        </div>
+    </section>
+
+    <footer class="footer">
+        <span class="footer-left">we're not actually given 4000 weeks, or even one week</span>
+        <span class="footer-right">we only get one moment after another</span>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.min.js"></script>
+    <script src="sketch.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
