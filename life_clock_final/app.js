@@ -6,7 +6,7 @@ window.addEventListener('load', function () {
 
     function createAudioPlayer() {
         audioPlayer = document.createElement("audio");
-        audioPlayer.src = "music/poolz_lookingatthesamestar.mp3"; // Replace with your audio file path
+        audioPlayer.src = "music/poolz_lookingatthesamestar.mp3";
         audioPlayer.loop = true;
         audioPlayer.autoplay = true;
     }
