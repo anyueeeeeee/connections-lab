@@ -531,6 +531,16 @@ h3 {
         transform: translate(-50%, -50%);
     }
 
+    .circle-svg,
+    .progress-circle {
+        position: absolute;
+        top: 50%; /* Ensures center alignment */
+        left: 50%; /* Ensures center alignment */
+        transform: translate(-50%, -50%); /* Center the SVG */
+        width: 233px; /* Match the circle width */
+        height: 233px; /* Match the circle height */
+    }
+
     .progress-stroke {
         fill: transparent;
         stroke: black;
