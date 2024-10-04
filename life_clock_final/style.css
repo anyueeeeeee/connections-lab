@@ -450,7 +450,7 @@ h3 {
         width: 100%;
         text-align: center;
         left: 50%;
-        margin-top: 15vh;
+        margin-top: 12vh;
     }
 
     .weeks-container {
@@ -471,7 +471,7 @@ h3 {
 
     .life-circle {
         position: static;
-        line-height: 222%;
+        line-height: 233%;
     }
 
     .circle {
