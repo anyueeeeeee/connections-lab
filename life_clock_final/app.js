@@ -2,6 +2,15 @@
 window.addEventListener('load', function () {
     // console.log("Page has loaded");
 
+    let audioPlayer;
+
+    function createAudioPlayer() {
+        audioPlayer = document.createElement("audio");
+        audioPlayer.src = "music/poolz_lookingatthesamestar.mp3"; // Replace with your audio file path
+        audioPlayer.loop = true;
+        audioPlayer.autoplay = true;
+    }
+
     function ageCalculate() {
         let inputDate = new Date(document.getElementById("date_input").value);
 
