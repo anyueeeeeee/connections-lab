@@ -1,0 +1,692 @@
+@font-face {
+    font-family: 'Safiro';
+    src: url('fonts/safiro-medium.otf');
+}
+
+@font-face {
+    font-family: 'Adi';
+    src: url('fonts/AdiHaus-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'AdiItalic';
+    src: url('fonts/AdiHaus-Italic.ttf');
+}
+
+/* page setup design */
+
+* {
+    background-color: transparent;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: "#e5e4e0";
+}
+
+h1 {
+    text-align: center;
+    font-family: "Safiro";
+    font-size: 30px;
+    padding-top: 0px;
+    padding-bottom: 35px;
+    color: black;
+}
+
+h2 {
+    font-family: "Safiro";
+    font-size: 30px;
+    z-index: 3;
+}
+
+p {
+    text-align: center;
+    font-family: "Adi";
+    color: black;
+    font-size: 14px;
+}
+
+/* header design */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 12px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    padding-right: 33px;
+}
+
+.header-logo {
+    width: 77px;
+    height: auto;
+}
+
+.vertical-text-left {
+    position: fixed;
+    top: 125px;
+    left: 50px;
+}
+
+.left-text {
+    font-family: "AdiItalic";
+    color: black;
+    font-size: 14px;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+.vertical-text-right {
+    position: fixed;
+    top: 250px;
+    right: -99px;
+}
+
+.right-text {
+    font-family: "AdiItalic";
+    color: #6a6a69;
+    font-size: 14px;
+    text-align: right;
+    transform: rotate(-270deg);
+}
+
+/* your life in weeks design */
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.main-text {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.weeks-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    font-family: "Safiro";
+}
+
+.input_wrap {
+    display: flex;
+    flex-direction: row;
+}
+
+/* circle life progress design */
+
+.life-circle {
+    position: absolute;
+    right: 22%;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 144%;
+}
+
+.circle {
+    fill: none;
+    width: 233px;
+    height: 233px;
+    border: 0.9px solid black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.circle-svg {
+    position: absolute;
+    width: 310px;
+    height: 310px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    z-index: 1;
+}
+
+.circular-text {
+    fill: #6a6a69;
+    font-family: "AdiItalic";
+    font-size: 14px;
+}
+
+@keyframes rotateText {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+svg {
+    width: 250px;
+    height: auto;
+}
+
+.circle-svg .circular-text {
+    animation: rotateText 30s linear infinite;
+    transform-origin: center;
+}
+
+.progress-circle {
+    position: absolute;
+    background-color: transparent;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.progress-stroke {
+    fill: transparent;
+    stroke: black;
+    stroke-width: 2.5px;
+    stroke-linecap: square;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    stroke-dasharray: 880;
+    /* Total circumference */
+    stroke-dashoffset: 880;
+    /* Hide the stroke initially */
+    transition: stroke-dashoffset 2s ease-out;
+    z-index: 1;
+}
+
+.life-circle span {
+    font-family: "Safiro";
+    font-size: 44px;
+}
+
+/* input & output design */
+
+.output_wrap {
+    height: 100px;
+    width: 100px;
+    color: black;
+    padding: 30px 10px;
+
+}
+
+input,
+button {
+    height: 25px;
+    font-family: "Adi";
+    color: black;
+    border-radius: 1px;
+}
+
+input {
+    border-radius: 4px;
+    border: 0.9px solid black;
+    font-size: 14px;
+    text-transform: uppercase;
+    justify-content: center;
+    width: 60%;
+    padding: 0px 4px;
+    font-size: 14px;
+}
+
+button {
+    width: 40%;
+    margin-left: 15px;
+    float: right;
+
+    outline: 0;
+    grid-gap: 8px;
+    align-items: center;
+    background: 0 0;
+    border: 0.9px solid black;
+    border-radius: 4px;
+    display: inline-flex;
+    font-size: 14px;
+    color: black;
+    justify-content: center;
+    line-height: 1.5;
+    overflow: hidden;
+    padding: 12px 25px;
+    transition: all .14s ease-out;
+    white-space: nowrap;
+}
+
+button:hover {
+    box-shadow: 3px 3px 0 black;
+    transform: translate(-3px, -3px);
+}
+
+.refreshBtn {
+    text-align: right;
+    font-family: "Adi";
+    color: black;
+    font-size: 14px;
+}
+
+/* .refreshBtn:hover{
+    background-color: rgb(181, 94, 145);
+} */
+
+span {
+    display: grid;
+    place-items: center;
+    font-family: "Safiro";
+    font-size: 30px;
+}
+
+/* footer & bottom text design */
+
+.bottom-text-left {
+    position: fixed;
+    bottom: 80px;
+    left: 48px;
+}
+
+.left-text-bottom {
+    font-family: "AdiItalic";
+    color: #6a6a69;
+    font-size: 14px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left {
+    text-align: left;
+    font-family: "AdiItalic";
+    font-size: 14px;
+    margin-left: 31px;
+}
+
+.footer-right {
+    text-align: right;
+    font-family: "AdiItalic";
+    font-size: 14px;
+    margin-right: 27px;
+}
+
+/* about text */
+
+.about-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 35vw;
+    max-height: 45vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h3 {
+    font-family: "Safiro";
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+
+
+
+/* MOBILE DESIGN */
+
+@media all and (max-width: 650px) {
+    h1 {
+        text-align: center;
+        font-family: "Safiro";
+        font-size: 25px;
+        padding-top: 70px;
+        color: black;
+    }
+
+    h2 {
+        font-family: "Safiro";
+        font-size: 25px;
+        z-index: 3;
+    }
+
+    p {
+        text-align: center;
+        font-family: "Adi";
+        color: black;
+        font-size: 11px;
+    }
+
+    /* header design */
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 12px;
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+        padding-right: 16px;
+    }
+
+    .header-logo {
+        width: 77px;
+        height: auto;
+    }
+
+    .vertical-text-left {
+        position: fixed;
+        top: 125px;
+        left: 27px;
+    }
+
+    .left-text {
+        font-family: "AdiItalic";
+        color: black;
+        font-size: 11px;
+        text-transform: uppercase;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+    }
+
+    .vertical-text-right {
+        position: fixed;
+        top: 200px;
+        right: -85px;
+    }
+
+    .right-text {
+        font-family: "AdiItalic";
+        color: #6a6a69;
+        font-size: 11px;
+        text-align: right;
+        transform: rotate(-270deg);
+    }
+
+    /* your life in weeks design */
+
+    .center-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        box-sizing: border-box;
+        height: auto;
+        gap: 50px;
+    }
+
+    .main-text {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        left: 50%;
+        margin-top: 15vh;
+    }
+
+    .weeks-container {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        font-family: "Safiro";
+    }
+
+    .input_wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    /* circle life progress design */
+
+    .life-circle {
+        position: static;
+        line-height: 144%;
+    }
+
+    .circle {
+        fill: none;
+        width: 233px;
+        height: 233px;
+        border: 0.9px solid black;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+    }
+
+    .circle-svg {
+        position: absolute;
+        width: 310px;
+        height: 310px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: transparent;
+        z-index: 1;
+    }
+
+    .circular-text {
+        fill: #6a6a69;
+        font-family: "AdiItalic";
+        font-size: 14px;
+    }
+
+    @keyframes rotateText {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    svg {
+        width: 250px;
+        height: auto;
+    }
+
+    .circle-svg .circular-text {
+        animation: rotateText 30s linear infinite;
+        transform-origin: center;
+    }
+
+    .progress-circle {
+        position: absolute;
+        background-color: transparent;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .progress-stroke {
+        fill: transparent;
+        stroke: black;
+        stroke-width: 2.5px;
+        stroke-linecap: square;
+        transform: rotate(-90deg);
+        transform-origin: 50% 50%;
+        stroke-dasharray: 880;
+        /* Total circumference */
+        stroke-dashoffset: 880;
+        /* Hide the stroke initially */
+        transition: stroke-dashoffset 2s ease-out;
+        z-index: 1;
+    }
+
+    .life-circle span {
+        font-family: "Safiro";
+        font-size: 44px;
+    }
+
+    /* input & output design */
+
+    .output_wrap {
+        height: 100px;
+        width: 100px;
+        color: black;
+        padding: 10px 10px;
+
+    }
+
+    input,
+    button {
+        height: 20px;
+        font-family: "Adi";
+        color: black;
+        border-radius: 1px;
+    }
+
+
+
+    input {
+        border-radius: 4px;
+        border: 0.9px solid black;
+        font-size: 1px;
+        text-transform: uppercase;
+        justify-content: center;
+        width: 60%;
+        padding: 2px 2px;
+        font-size: 14px;
+    }
+
+    button {
+        width: 40%;
+        margin-left: 15px;
+        float: right;
+
+        outline: 0;
+        grid-gap: 8px;
+        align-items: center;
+        background: 0 0;
+        border: 0.9px solid black;
+        border-radius: 4px;
+        display: inline-flex;
+        font-size: 14px;
+        color: black;
+        justify-content: center;
+        line-height: 1.5;
+        overflow: hidden;
+        padding: 12px 25px;
+        transition: all .14s ease-out;
+        white-space: nowrap;
+    }
+
+    button:hover {
+        box-shadow: 3px 3px 0 black;
+        transform: translate(-3px, -3px);
+    }
+
+    .refreshBtn {
+        text-align: right;
+        font-family: "Adi";
+        color: black;
+        font-size: 14px;
+    }
+
+    /* .refreshBtn:hover{
+        background-color: rgb(181, 94, 145);
+    } */
+
+    span {
+        display: grid;
+        place-items: center;
+        font-family: "Safiro";
+        font-size: 30px;
+    }
+
+    /* footer & bottom text design */
+
+    .bottom-text-left {
+        position: fixed;
+        bottom: 88px;
+        left: 26px;
+    }
+
+    .left-text-bottom {
+        font-family: "AdiItalic";
+        color: #6a6a69;
+        font-size: 11px;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .footer-left {
+        text-align: left;
+        font-family: "AdiItalic";
+        font-size: 11px;
+        margin-left: 9px;
+    }
+
+    .footer-right {
+        text-align: right;
+        font-family: "AdiItalic";
+        font-size: 11px;
+        margin-right: 9px;
+    }
+
+    /* about text */
+
+    .about-container {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 55vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    h3 {
+        font-family: "Safiro";
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+}
