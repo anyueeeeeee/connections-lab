@@ -501,6 +501,8 @@ h3 {
         fill: #6a6a69;
         font-family: "AdiItalic";
         font-size: 14px;
+        text-anchor: middle;
+        transform-origin: 50% 50%;
     }
 
     @keyframes rotateText {
@@ -520,7 +522,7 @@ h3 {
 
     .circle-svg .circular-text {
         animation: rotateText 30s linear infinite;
-        transform-origin: center;
+        transform-origin: 50% 50%;
     }
 
     .progress-circle {
