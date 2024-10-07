@@ -6,6 +6,6 @@ window.addEventListener('load', function () {
         window.location.href = "index-mobile.html";
     } else if (!isMobile && !window.location.href.includes('index.html')) {
         // Redirect to desktop version if the screen is wider than 768px
-        window.location.href = "index-desktop.html";
+        window.location.href = "index.html";
     }
 });
