@@ -25,7 +25,6 @@ window.addEventListener('load', function () {
         //4. Then access the data
         .then(function (data) {
             // console.log(data);
-            //5. Do something with the data
             let weeksLived = data.data.age_weeks;
             document.getElementById("weeksLived").innerHTML=weeksLived;
 
