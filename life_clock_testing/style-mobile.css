@@ -145,10 +145,12 @@ p {
     font-size: 1rem;
     font-family: "Adi";
     display: inline-flex;
+    line-height: 1.5;
     background-color: transparent;
     border: 0.9px solid black;
     border-radius: 4px;
     white-space: nowrap;
+    color: black;
 }
 
 .life-circle {
