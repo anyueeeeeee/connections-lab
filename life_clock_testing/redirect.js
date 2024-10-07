@@ -4,7 +4,7 @@ window.addEventListener('load', function () {
     if (isMobile && !window.location.href.includes('index-mobile.html')) {
         // Redirect to mobile version if the screen is smaller than or equal to 768px
         window.location.href = "index-mobile.html";
-    } else if (!isMobile && !window.location.href.includes('index-desktop.html')) {
+    } else if (!isMobile && !window.location.href.includes('index.html')) {
         // Redirect to desktop version if the screen is wider than 768px
         window.location.href = "index-desktop.html";
     }
