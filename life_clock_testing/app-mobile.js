@@ -61,8 +61,8 @@ window.addEventListener('load', function() {
     }
 
      function updateCircularText(daysLeft) {
-        let textPath = document.querySelector(".circular-text textPath");
-        textPath.textContent = `what are you going to do with your ${daysLeft} remaining sunrises?`;
+        // let textPath = document.querySelector(".circular-text textPath");
+        // textPath.textContent = `what are you going to do with your ${daysLeft} remaining sunrises?`;
         let textElement = document.getElementById("dynamic-text");
         textElement.textContent = `what are you going to do with your ${daysLeft} remaining sunrises?`;
     }
