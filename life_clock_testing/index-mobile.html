@@ -38,11 +38,6 @@
             <h1>your life in weeks</h1>
             <div>
                 <input type="date" id="date_input" name="dob">
-		    <script>
-			    const today = new Date();
-			    const formattedDate = today.toISOString().split('T')[0];
-			    document.getElementbyID('date_input').value=formattedDate;
-		    </script>
                 <button class="ageButton">CALCULATE →</button>
             </div>
 
