@@ -72,7 +72,7 @@ h1 {
     text-align: center;
     font-family: "Roboto Mono";
     font-weight: 500;
-    font-size: 2.5rem;
+    font-size: 2rem;
     letter-spacing: -0.05rem;
     color: black;
     margin-bottom: 0.25rem;
@@ -82,7 +82,7 @@ h1 {
 h2 {
     text-align: center;
     font-family: "Roboto Mono";
-    font-size: 2.5rem;
+    font-size: 2rem;
     letter-spacing: -0.05rem;
     margin-top: 0.5rem;
     margin-bottom: 0;
@@ -92,7 +92,7 @@ h4 {
     text-align: center;
     font-family: "Open Sans";
     font-weight: 300;
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin-bottom: 0rem;
     margin-top: 1.5rem;
 }
@@ -132,7 +132,10 @@ p {
 .weeks-container {
     padding-top: 1.5rem;
     padding-bottom: 0.2rem;
-    font-family: "Cabin";
+    font-family: "Roboto Mono";
+    font-weight: 500;
+    font-size: 2rem;
+    letter-spacing: -0.05rem;
 }
 
 #date_input {
@@ -189,7 +192,10 @@ p {
     align-items: center;
     flex-direction: column;
     z-index: 2;
-    font-family: "Cabin";
+    font-family: "Roboto Mono";
+    font-weight: 500;
+    font-size: 2rem;
+    letter-spacing: -0.05rem;
 }
 
 .circle-svg {
@@ -260,8 +266,10 @@ p {
 }
 
 .life-circle span {
-    font-family: "Cabin";
-    font-size: 3rem;
+    font-family: "Roboto Mono";
+    font-weight: 500;
+    font-size: 2rem;
+    letter-spacing: -0.05rem;
 }
 
 .button {
