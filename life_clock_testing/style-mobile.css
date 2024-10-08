@@ -153,6 +153,10 @@ p {
     color: black;
 }
 
+#date_input::placeholder {
+    color:black;
+}
+
 .life-circle {
     position: relative;
     margin-top: 0;
