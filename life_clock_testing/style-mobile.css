@@ -1,18 +1,3 @@
-@font-face {
-    font-family: 'Adi';
-    src: url('./fonts/Adihaus-Regular.woff');
-}
-
-@font-face {
-    font-family: 'AdiItalic';
-    src: url('./fonts/Adihaus-Italic.woff');
-}
-
-@font-face {
-    font-family: 'Safiro';
-    src: url('./fonts/safiro-medium.woff');
-}
-
 body, html {
     margin: 0;
     padding: 0;
@@ -58,8 +43,10 @@ header {
 .vertical-text-left {
     position: fixed;
     top: 6rem;
-    left: 1.6rem;
-    font-family: "AdiItalic";
+    left: 1.35rem;
+    font-family: "Open Sans";
+    font-weight: 300;
+    font-style: italic;
     color: black;
     font-size: 1rem;
     text-transform: uppercase;
@@ -71,7 +58,9 @@ header {
     position: fixed;
     bottom: 9rem;
     right: -3.3rem;
-    font-family: "AdiItalic";
+    font-family: "Open Sans";
+    font-weight: 300;
+    font-style: italic;
     color: #6a6a69;
     font-size: 1rem;
     text-align: left;
@@ -81,8 +70,10 @@ header {
 
 h1 {
     text-align: center;
-    font-family: "Safiro";
-    font-size: 2.5rem;
+    font-family: "Roboto Mono";
+    font-weight: 500;
+    font-size: 2rem;
+    letter-spacing: -0.05rem;
     color: black;
     margin-bottom: 0.25rem;
     margin-top: 0;
@@ -90,23 +81,26 @@ h1 {
 
 h2 {
     text-align: center;
-    font-family: "Safiro";
-    font-size: 2.5rem;
+    font-family: "Roboto Mono";
+    font-size: 2rem;
+    letter-spacing: -0.05rem;
     margin-top: 0.5rem;
     margin-bottom: 0;
 }
 
 h4 {
     text-align: center;
-    font-family: "Adi";
-    font-size: 1rem;
+    font-family: "Open Sans";
+    font-weight: 300;
+    font-size: 0.9rem;
     margin-bottom: 0rem;
     margin-top: 1.5rem;
 }
 
 p {
     text-align: center;
-    font-family: "Adi";
+    font-family: "Open Sans";
+    font-weight: 300;
     font-size: 1rem;
     padding-bottom: 1rem;
 }
@@ -130,20 +124,22 @@ p {
     justify-content: center;
     text-align: center;
     gap: 8px;
-    font-family: "Adi";
+    font-family: "Open Sans";
+    font-weight: 300;
     background-color: transparent;
 }
 
 .weeks-container {
     padding-top: 1.5rem;
     padding-bottom: 0.2rem;
-    font-family: "Safiro";
+    font-family: "Cabin";
 }
 
 #date_input {
     padding: 0.5rem 1rem;
     font-size: 1rem;
-    font-family: "Adi";
+    font-family: "Open Sans";
+    font-weight: 300;
     display: inline-flex;
     line-height: 1.5;
     background-color: transparent;
@@ -193,7 +189,7 @@ p {
     align-items: center;
     flex-direction: column;
     z-index: 2;
-    font-family: "Safiro";
+    font-family: "Cabin";
 }
 
 .circle-svg {
@@ -221,7 +217,8 @@ p {
     align-items: center;
     justify-content: center;
     fill: #6a6a69;
-    font-family: "AdiItalic";
+    font-family: "Open Sans";
+    font-weight: 300;
     font-size: 1rem;
     transform-origin: 150px 150px;
     animation: rotateText 30s linear infinite;
@@ -263,14 +260,15 @@ p {
 }
 
 .life-circle span {
-    font-family: "Safiro";
+    font-family: "Cabin";
     font-size: 3rem;
 }
 
 .button {
     padding: 0.5rem 1rem;
     font-size: 1rem;
-    font-family: "Adi";
+    font-family: "Open Sans";
+    font-weight: 300;
     outline: 0;
     grid-gap: 8px;
     align-items: center;
@@ -292,7 +290,8 @@ p {
 
 .refreshBtn {
     text-align: right;
-    font-family: "Adi";
+    font-family: "Open Sans";
+    font-weight: 300;
     color: black;
     font-size: 1rem;
 }
@@ -300,7 +299,8 @@ p {
 .ageButton {
     padding: 0.5rem 1rem;
     font-size: 1rem;
-    font-family: "Adi";
+    font-family: "Open Sans";
+    font-weight: 300;
     color: white;
     outline: 0;
     grid-gap: 8px;
@@ -336,7 +336,9 @@ p {
     margin-top: 0.3rem;
     box-sizing: border-box;
     font-size: 1rem;
-    font-family: "AdiItalic";
+    font-family: "Open Sans";
+    font-weight: 300;
+    font-style: italic;
     color: #6a6a69;
 }
 
