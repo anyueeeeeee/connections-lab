@@ -1,4 +1,11 @@
 window.addEventListener('load', function() {
+
+    const dateInput = document.getElementById('date_input');
+        if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.value=today;
+    }
+    
     
     function ageCalculate() {
         let inputDate = new Date(document.getElementById("date_input").value);
