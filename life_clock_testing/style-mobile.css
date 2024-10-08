@@ -153,18 +153,6 @@ p {
     color: black;
 }
 
-.date-text {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    font-family: "Adi";
-    display: inline-flex;
-    line-height: 1.2rem;
-    background-color: transparent;
-    border: 0.9px solid black;
-    border-radius: 4px;
-    white-space: nowrap;
-}
-
 .life-circle {
     position: relative;
     margin-top: 0;
