@@ -37,7 +37,13 @@
         <div class="main-text">
             <h1>your life in weeks</h1>
             <div>
-                <input type="date" id="date_input" name="dob">
+                <input 
+                    placeholder="YOUR BIRTHDAY"
+                    class="date-text"
+                    type="text"
+                    onfocus="(this.type='date')"
+                    onblur="(this.type='text')"
+                    id="date_input" name="dob">
                 <button class="ageButton">CALCULATE →</button>
             </div>
 
