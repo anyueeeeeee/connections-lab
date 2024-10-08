@@ -302,7 +302,7 @@ p {
     grid-gap: 8px;
     align-items: center;
     background: #6a6a69;
-    border: none;
+    border: 0.9px solid #6a6a69;
     border-radius: 4px;
     display: inline-flex; /* button only takes up space of text */
     justify-content: center;
