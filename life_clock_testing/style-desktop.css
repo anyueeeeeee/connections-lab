@@ -113,6 +113,8 @@ header {
 
 .header-right {
     padding-right: 0.5rem;
+    display: flex;
+    align-items: center;
 }
 
 .header-logo {
@@ -147,6 +149,13 @@ header {
     font-size: 1.2rem;
     text-align: right;
     transform: rotate(-270deg);
+}
+
+#playPauseButton {
+    height: 2rem;
+    vertical-align: center;
+    padding-right: 1rem;
+    flex-shrink: 0;
 }
 
 /* your life in weeks design */
