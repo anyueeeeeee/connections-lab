@@ -1,8 +1,33 @@
+@font-face {
+    font-family: 'Safiro';
+    src: url('fonts/safiro-medium.woff');
+}
+
+@font-face {
+    font-family: 'Adi';
+    src: url('fonts/Adihaus-Regular.woff');
+}
+
+@font-face {
+    font-family: 'AdiItalic';
+    src: url('fonts/Adihaus-Italic.woff');
+}
+
+/* page setup design */
+
+* {
+    background: transparent;
+    /* background-color:  #e5e4e0; */
+    margin: 0px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
 body, html {
     margin: 0;
     padding: 0;
     width: 100vw;
-    height: 100%;
+    height: 100vh;
     scroll-behavior: smooth;
     font-size: 12px;
     background-color: transparent;
@@ -14,8 +39,62 @@ body, html {
     left: 0;
     width: 100vw; 
     height: 100%; 
-    z-index: -1; 
+    z-index: -4; 
 }
+
+.section {
+    height: 100vh;
+    width: 60vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    background-color: transparent
+}
+
+
+h1 {
+    text-align: center;
+    font-family: "Safiro";
+    font-size: 2.5rem;
+    color: black;
+    margin-bottom: 2rem;
+    margin-top: 0;
+}
+
+h2 {
+    text-align: center;
+    font-family: "Safiro";
+    font-size: 2.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
+h3 {
+    text-align: center;
+    font-family: "Adi";
+    font-size: 1rem;
+    margin-bottom: 0rem;
+    margin-top: 1.5rem;
+}
+
+h4 {
+    text-align: center;
+    font-family: "Adi";
+    font-size: 1.2rem;
+    padding-bottom: 2rem;
+}
+
+p {
+    text-align: center;
+    font-family: "Adi";
+    font-size: 1rem;
+    padding-bottom: 2rem;
+}
+
+/* header design */
 
 header {
     position: fixed; 
@@ -26,29 +105,33 @@ header {
     left: 0;
     width: 100%; 
     z-index: 1000;
-    padding: 1rem;
+    padding: 2rem;
     margin-top: 0.3rem;
     box-sizing: border-box;
+    background-color: transparent;
 }
 
 .header-right {
     padding-right: 0.5rem;
+    display: flex;
+    align-items: center;
 }
 
 .header-logo {
-    width: 3.5rem;
+    width: 6rem;
     height: auto;
 }
 
 .vertical-text-left {
     position: fixed;
-    top: 6rem;
-    left: 1.35rem;
-    font-family: "Open Sans";
-    font-weight: 300;
-    font-style: italic;
+    top: 125px;
+    left: 50px;
+}
+
+.left-text {
+    font-family: "AdiItalic";
     color: black;
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
@@ -56,65 +139,34 @@ header {
 
 .vertical-text-right {
     position: fixed;
-    bottom: 9rem;
-    right: -3.3rem;
-    font-family: "Open Sans";
-    font-weight: 300;
-    font-style: italic;
+    top: 250px;
+    right: -99px;
+}
+
+.right-text {
+    font-family: "AdiItalic";
     color: #6a6a69;
-    font-size: 1rem;
-    text-align: left;
+    font-size: 1.2rem;
+    text-align: right;
     transform: rotate(-270deg);
 }
 
-
-h1 {
-    text-align: center;
-    font-family: "Roboto Mono";
-    font-weight: 500;
-    font-size: 2rem;
-    letter-spacing: -0.05rem;
-    color: black;
-    margin-bottom: 0.25rem;
-    margin-top: 0;
+#playPauseButton {
+    height: 2rem;
+    vertical-align: center;
+    padding-right: 1rem;
+    flex-shrink: 0;
 }
 
-h2 {
-    text-align: center;
-    font-family: "Roboto Mono";
-    font-size: 2rem;
-    letter-spacing: -0.05rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0;
-}
+/* your life in weeks design */
 
-h4 {
-    text-align: center;
-    font-family: "Open Sans";
-    font-weight: 300;
-    font-size: 0.9rem;
-    margin-bottom: 0rem;
-    margin-top: 1.5rem;
-}
-
-p {
-    text-align: center;
-    font-family: "Open Sans";
-    font-weight: 300;
-    font-size: 1rem;
-    padding-bottom: 1rem;
-}
-
-.section {
-    height: 100vh;
-    width: 80vw;
-    margin: 0 auto;
+.center-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    gap: 10rem;
     justify-content: center;
-    font-size: 2rem;
-    /* background-color: #e5e4e0; */
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
 }
 
 .main-text {
@@ -124,42 +176,34 @@ p {
     justify-content: center;
     text-align: center;
     gap: 8px;
-    font-family: "Open Sans";
-    font-weight: 300;
+    font-family: "Adi";
+    margin-left: 15px;
     background-color: transparent;
 }
 
 .weeks-container {
-    padding-top: 1.5rem;
-    padding-bottom: 0.2rem;
-    font-family: "Roboto Mono";
-    font-weight: 500;
-    font-size: 2rem;
-    letter-spacing: -0.05rem;
+    display: flex;
+    flex-direction: row;
+    padding-top: 3rem;
+    padding-bottom: 0.9rem;
+    gap: 2rem;
+    font-family: "Safiro";
 }
 
 #date_input {
     padding: 0.5rem 1rem;
     font-size: 1rem;
-    font-family: "Open Sans";
-    font-weight: 300;
+    font-family: "Adi";
     display: inline-flex;
-    line-height: 1.5;
     background-color: transparent;
     border: 0.9px solid black;
     border-radius: 4px;
     white-space: nowrap;
-    color: black;
-}
-
-#date_input::placeholder {
-    color:black;
 }
 
 .life-circle {
     position: relative;
-    margin-top: 0;
-    margin-bottom: 1rem;
+    margin:0;
     width: 300px;
     height: 300px;
 }
@@ -172,9 +216,6 @@ p {
 }
 
 .back-circle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 233px;
     height: 233px;
     fill: transparent;
@@ -192,20 +233,20 @@ p {
     align-items: center;
     flex-direction: column;
     z-index: 2;
-    font-family: "Roboto Mono";
-    font-weight: 500;
-    font-size: 2rem;
-    letter-spacing: -0.05rem;
+    font-family: "Safiro";
 }
 
 .circle-svg {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 310px;
     height: 310px;
     background-color: transparent;
     z-index: 1;
+}
+
+.circular-text {
+    fill: #6a6a69;
+    font-family: "AdiItalic";
+    font-size: 1rem;
 }
 
 @keyframes rotateText {
@@ -219,38 +260,17 @@ p {
 }
 
 .circle-svg .circular-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    fill: #6a6a69;
-    font-family: "Open Sans";
-    font-weight: 300;
-    font-size: 1rem;
-    transform-origin: 150px 150px;
     animation: rotateText 30s linear infinite;
     transform-origin: center;
-    text-anchor: middle;
-}
-
-#text-circle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .progress-circle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 250px;
     height: 250px;
     background-color: transparent;
 }
 
 .progress-stroke {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     fill: transparent;
     stroke: black;
     stroke-width: 2.5px;
@@ -258,25 +278,39 @@ p {
     transform: rotate(-90deg);
     transform-origin: 50% 50%;
     stroke-dasharray: 880;
-    /* Total circumference */
     stroke-dashoffset: 880;
-    /* Hide the stroke initially */
     transition: stroke-dashoffset 2s ease-out;
     z-index: 1;
 }
 
 .life-circle span {
-    font-family: "Roboto Mono";
-    font-weight: 500;
-    font-size: 2rem;
-    letter-spacing: -0.05rem;
+    font-family: "Safiro";
+    font-size: 3rem;
+}
+
+
+/* input & output design */
+
+.input_wrap {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+input {
+    border-radius: 4px;
+    border: 0.9px solid black;
+    font-size: 1rem;
+    text-transform: uppercase;
+    justify-content: center;
+    width: 60%;
+    padding: 0px 4px;
 }
 
 .button {
     padding: 0.5rem 1rem;
     font-size: 1rem;
-    font-family: "Open Sans";
-    font-weight: 300;
+    font-family: "Adi";
     outline: 0;
     grid-gap: 8px;
     align-items: center;
@@ -298,23 +332,21 @@ p {
 
 .refreshBtn {
     text-align: right;
-    font-family: "Open Sans";
-    font-weight: 300;
+    font-family: "Adi";
     color: black;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .ageButton {
     padding: 0.5rem 1rem;
     font-size: 1rem;
-    font-family: "Open Sans";
-    font-weight: 300;
+    font-family: "Adi";
     color: white;
     outline: 0;
     grid-gap: 8px;
     align-items: center;
     background: #6a6a69;
-    border: 0.9px solid #6a6a69;
+    border: none;
     border-radius: 4px;
     display: inline-flex; /* button only takes up space of text */
     justify-content: center;
@@ -323,37 +355,53 @@ p {
     white-space: nowrap;
 }
 
-#section4 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 70vw;
+span {
+    display: grid;
+    place-items: center;
+    font-family: "Safiro";
+    font-size: 30px;
+}
+
+/* footer & bottom text design */
+
+.bottom-text-left {
+    position: fixed;
+    bottom: 80px;
+    left: 48px;
+}
+
+.left-text-bottom {
+    font-family: "AdiItalic";
+    color: #6a6a69;
+    font-size: 1.2rem;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
 }
 
 .footer {
-    position: fixed; 
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    bottom: 0; 
-    left: 0;
-    width: 100%; 
-    z-index: 1000;
-    padding: 1.6rem;
-    margin-top: 0.3rem;
-    box-sizing: border-box;
-    font-size: 1rem;
-    font-family: "Open Sans";
-    font-weight: 300;
-    font-style: italic;
-    color: #6a6a69;
+    background-color: transparent;
 }
 
 .footer-left {
     text-align: left;
+    font-family: "AdiItalic";
+    font-size: 1.2rem;
+    color: #6a6a69;
+    margin-left: 31px;
 }
 
 .footer-right {
     text-align: right;
+    font-family: "AdiItalic";
+    font-size: 1.2rem;
+    color: #6a6a69;
+    margin-right: 27px;
 }
