@@ -3,6 +3,7 @@ window.addEventListener('load', function () {
     // console.log("Page has loaded");
 
     let audioPlayer;
+    let isPlaying = true;
 
     function createAudioPlayer() {
         audioPlayer = document.createElement("audio");
@@ -17,64 +18,51 @@ window.addEventListener('load', function () {
         createAudioPlayer();
     }
 
+    const playPauseButton = document.getElementById("playPauseButton");
+    
+    playPauseButton.addEventListener("click", function () {
+        if (!audioPlayer) createAudioPlayer(); // Ensure the audio player is created
+        if (isPlaying) {
+            audioPlayer.pause();
+            playPauseButton.src = "icons/playbutton.png"; // Switch to play icon
+        } else {
+            audioPlayer.play();
+            playPauseButton.src = "icons/pausebutton.png"; // Switch to pause icon
+        }
+        isPlaying = !isPlaying; // Toggle state
+    });
+
     function ageCalculate() {
         let inputDate = new Date(document.getElementById("date_input").value);
 
-        let birthDate = String(inputDate.getDate()).padStart(2, '0'); // Ensure day is 2 digits, chatGPT
-        let birthMonth = String(inputDate.getMonth() + 1).padStart(2, '0'); // Ensure month is 2 digits, chatGPT
-        let birthYear = inputDate.getFullYear();
+        if (isNaN(inputDate.getTime())) {
+            alert("Please enter a valid birthdate.");
+            return;
+        }
 
-        let url = `https://api.apiverve.com/v1/agecalculator?dob=${birthYear}-${birthMonth}-${birthDate}`;
+        const currentDate = new Date();
+        const differenceInTime = currentDate - inputDate;
+        
+        // Calculate total days lived
+        const daysLived = Math.floor(differenceInTime / (1000 * 60 * 60 * 24));
+        const weeksLived = Math.floor(daysLived / 7);
 
-        //2. Request data
-        fetch(url, {
-            headers: {
-                'x-api-key': '66f2352f-620e-4969-8431-2bde66259e4f', // Replace with your actual API key
-                'Content-Type': 'application/json'
-            }
-        })
+        // Calculate remaining days and weeks
+        const weeksLeft = 4000 - weeksLived;
+        const daysLeft = 28000 - daysLived;
+        const lifeLived = ((weeksLived / 4000) * 100).toFixed(2);
 
-            //3. Then get the status of the request 
-            .then(response => response.json())
+        // Update HTML content
+        document.getElementById("weeksLived").innerHTML = weeksLived;
+        document.getElementById("weeksLeft").innerHTML = weeksLeft;
+        document.getElementById("lifeLived").innerHTML = lifeLived + "%";
 
-            //4. Then access the data
-            .then(function (data) {
-                // console.log(data);
-                //5. Do something with the data
-                let weeksLived = data.data.age_weeks;
-                document.getElementById("weeksLived").innerHTML = weeksLived;
+        updateCircularText(daysLeft);
+        updateProgressCircle(lifeLived);
 
-                let weeksLeft = 4000 - weeksLived;
-                document.getElementById("weeksLeft").innerHTML = weeksLeft;
-
-                let lifeLived = ((weeksLived / 4000) * 100).toFixed(2);
-                document.getElementById("lifeLived").innerHTML = lifeLived + "%";
-
-                let daysLeft = 28000 - data.data.age_days;
-                updateCircularText(daysLeft);
-
-                updateProgressCircle(lifeLived);
-
-                //help from chatGPT
-                window.weeksLivedGlobal = weeksLived; 
-                window.dispatchEvent(new CustomEvent('weeksLivedUpdated', { detail: weeksLived })); //dispatch custom event
-            })
-
-            .catch(error => {
-                console.log("Error! :" + error);
-                let weeksLived = data.data.age_weeks;
-                document.getElementById("weeksLived").innerHTML = "you're too alive";
-
-                let weeksLeft = 4000 - weeksLived;
-                document.getElementById("weeksLeft").innerHTML = "you're too alive";
-
-                let lifeLived = (weeksLived / 4000) * 100;
-                document.getElementById("lifeLived").innerHTML = "you're too alive";
-
-                let daysLeft = 28000 - data.data.age_days;
-                document.getElementById("daysLeft").innerHTML = "you're too alive";
-
-            });
+        // Dispatch custom event
+        window.weeksLivedGlobal = weeksLived; 
+        window.dispatchEvent(new CustomEvent('weeksLivedUpdated', { detail: weeksLived }));
     }
 
     function updateCircularText(daysLeft) {
@@ -94,17 +82,14 @@ window.addEventListener('load', function () {
     }
 
     const buttons = document.querySelectorAll(".button");
-    // Add click event listeners to each button
     buttons.forEach(button => {
         button.addEventListener("click", function() {
-            // Get the target section ID from the "data-target" attribute
             const targetSection = button.getAttribute("data-target");
-            // Scroll to the target section if it exists
             if (targetSection) {
                 document.querySelector(targetSection).scrollIntoView({ behavior: "smooth" });
             }
         });
-    });
+    }); 
 
     const ageButton = document.querySelector(".ageButton");
     if (ageButton) {
